@@ -5,20 +5,26 @@
 <title>MysqlTest</title>
 </head>
 <body>
-
-	<h1>データベーステスト</h1>
-
-	<table th:if="${results} != null" border="1">
-		<tr>
-			<th>ID</th>
-			<th>名前</th>
-		</tr>
-		<tr th:each="data : ${results}">
-			<td th:text="${data.id}"></td>
-			<td th:text="${data.name}"></td>
-		</tr>
-	</table>
-
-
+	<div id="warapper">
+		<h1>データベーステスト</h1>
+	
+		<p>登録</p>
+		<form action="/insert" method="post">
+			<input type="text" name="insert" />
+			<input type="submit" value="検索" />
+		</form>
+	
+		<br/>
+		<table th:if="${results} != null" border="1">
+			<tr>
+				<th>ID</th>
+				<th>名前</th>
+			</tr>
+			<tr th:each="data : ${results}">
+				<td th:text="${data.id}"></td>
+				<td th:text="${data.name}"></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
